@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS EMPLOYEES;
+
+CREATE TABLE EMPLOYEES ( 
+   id INT AUTO_INCREMENT, 
+   name VARCHAR(50) NOT NULL, 
+   job ENUM('EMPLOYEE','MANAGER','BOSS','VOLUNTEER') NOT NULL,
+   salary INT DEFAULT 0,
+   PRIMARY KEY(id)
+);
+
+INSERT INTO EMPLOYEES(name,job,salary) VALUES ('Marta','Manager',2000);
+INSERT INTO EMPLOYEES(name,job,salary) VALUES ('Jose','Boss',3000);
+INSERT INTO EMPLOYEES(name,job,salary) VALUES ('Raul','Employee',1000);
+INSERT INTO EMPLOYEES(name,job,salary) VALUES ('Ivan','Volunteer',0);
+
+
+
+

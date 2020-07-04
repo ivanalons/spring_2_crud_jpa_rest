@@ -11,10 +11,14 @@ import com.employees.crud.dto.Employee;
 @Service
 public class EmployeeServiceImpl implements IEmployeeService{
 
-	private static final String EMPLOYEE = "EMPLOYEE";
-	private static final String MANAGER = "MANAGER";
-	private static final String BOSS = "BOSS";
-	private static final String VOLUNTEER = "VOLUNTEER";
+	//	private static final String EMPLOYEE = "EMPLOYEE";
+	//	private static final String MANAGER = "MANAGER";
+	//	private static final String BOSS = "BOSS";
+	//	private static final String VOLUNTEER = "VOLUNTEER";
+	
+	public enum JobEnum { //Ha de coincidir amb la enumeració del camp job de la taula employees de  la base de dades
+		EMPLOYEE,MANAGER,BOSS,VOLUNTEER
+	}
 	
 	@Autowired
 	IEmployeeDAO iEmployeeDAO;
@@ -37,7 +41,9 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	@Override
 	public Employee saveEmployee(Employee employee) {
 		
-		String job = employee.getJob().toUpperCase();
+		String strJob = employee.getJob().toUpperCase();
+		
+		JobEnum job = JobEnum.valueOf(strJob);
 		
 		int salary = 0;
 		
@@ -51,7 +57,10 @@ public class EmployeeServiceImpl implements IEmployeeService{
 			case BOSS :
 				salary = 3000;
 				break;
-			default :
+			case VOLUNTEER :
+				salary = 0;
+				break;
+			default : //No s'ha introduït una categoria de feina (job) vàlida
 				salary = 0;
 				break;
 		}

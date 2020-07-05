@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset="ISO-8859-1">
+		<title>SPRING CRUD REST JPA H2</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="js/ajaxFunctions.js"></script>
+	</head>
+	
+	<body>
+		<table border="1" >
+			<tr>
+			
+				<!-- ************************** -->	
+				<!-- CONSULTA TOTS ELS EMPLEATS -->
+				<!-- ************************** -->
+				
+				<td align="center" valign="top">
+					<p> <b>CONSULTA TOTS ELS EMPLEATS</b> </p>
+					<button type="button" onclick="sendGETRequest()" >CONSULTAR</button>
+					<p id="answerGet"></p>
+				</td>
+
+				<!-- *********************************** -->				
+				<!-- CONSULTA EMPLEATS PER IDENTIFICADOR -->
+				<!-- *********************************** -->				
+				
+				<td align="center" valign="top">
+					<p><b>CONSULTA EMPLEAT PER IDENTIFICADOR</b></p>
+					 <label>Id:</label><input id="id" name="id" type="text"></input>
+					<button type="button" onclick="sendGETRequestById()" >CONSULTAR</button>
+					<p id="answerGetById"></p>
+				</td>
+
+				<!-- *************************** -->								
+				<!-- CONSULTA EMPLEATS PER FEINA -->			
+				<!-- *************************** -->				
+				
+				<td align="center" valign="top">
+					<p><b>CONSULTA EMPLEAT PER FEINA</b></p>
+					
+					 <label>Feina:</label>
+					 <select id="job" name="job">
+					  <option value="EMPLOYEE">Empleat</option>
+					  <option value="MANAGER">Gerent</option>
+					  <option value="BOSS">Director</option>
+					  <option value="VOLUNTEER">Voluntari</option>
+					</select>
+					 
+					<button type="button" onclick="sendGETRequestByJob()" >CONSULTAR</button>
+					<p id="answerGetByJob"></p>
+				</td>
+				
+			</tr>
+			<tr>
+
+				<!-- ***************** -->				
+				<!-- CREAR NOU EMPLEAT -->						
+				<!-- ***************** -->				
+			
+				<td align="center" valign="top">
+					<p><b>CREAR NOU EMPLEAT</b></p>
+					
+					<table>
+						<tr><td>
+					 	 <label>Nom:</label>
+						 <input id="createName" name="createName" type="text"></input>
+						</td></tr>
+						
+						<tr><td>
+						
+						 <label>Feina:</label>
+						 <select id="createJob" name="createJob">
+							  <option value="EMPLOYEE">Empleat</option>
+							  <option value="MANAGER">Gerent</option>
+							  <option value="BOSS">Director</option>
+							  <option value="VOLUNTEER">Voluntari</option>
+						 </select>
+						 
+						</td></tr>
+					</table>	
+									 <br>
+					<button type="button" onclick="sendPOSTRequest()"> CREAR </button>
+					<p id="answerPost"></p>
+				</td>
+	
+				<!-- ***************** -->							
+				<!-- MODIFICAR EMPLEAT -->										
+				<!-- ***************** -->				
+				
+				<td align="center" valign="top">
+					<p><b>MODIFICAR EMPLEAT</b></p>
+					
+					<table>
+					
+						<tr><td>
+					 	 <label>Id:</label>
+					 	 </td><td>
+						 <input id="updateId" name="updateId" type="text"></input>
+						</td></tr>
+					
+						<tr><td>
+					 	 <label>Nom:</label>
+					 	 </td><td>					 	 
+						 <input id="updateName" name="updateName" type="text"></input>
+						</td></tr>
+						
+						<tr><td>
+						
+						 <label>Feina:</label>
+						 </td><td>
+						 <select id="updateJob" name="updateJob">
+							  <option value="EMPLOYEE">Empleat</option>
+							  <option value="MANAGER">Gerent</option>
+							  <option value="BOSS">Director</option>
+							  <option value="VOLUNTEER">Voluntari</option>
+						 </select>
+						 
+						</td></tr>
+						
+						<tr><td>
+					 	 <label>Salari:</label>
+					 	 </td><td>
+						 <input id="updateSalary" name="updateSalary" type="text"></input>
+						</td></tr>
+						
+					</table>	
+									 <br>
+					<button type="button" onclick="sendPUTRequest()"> MODIFICAR </button>
+					<p id="answerPut"></p>
+				</td>
+				
+			<!-- **************** -->							
+			<!-- ELIMINAR EMPLEAT -->										
+			<!-- **************** -->	
+				
+				<td align="center" valign="top">
+					<p><b>ELIMINAR EMPLEAT PER IDENTIFICADOR</b></p>
+					   <label>Id:</label><input id="deleteId" name="deleteId" type="text"></input>
+					   <button type="button" onclick="sendDELETERequest()" >ELIMINAR</button>
+					<p id="answerDelete"></p>
+				</td>
+				
+			</tr>
+		</table>
+		
+		
+	</body>
+	
+</html>

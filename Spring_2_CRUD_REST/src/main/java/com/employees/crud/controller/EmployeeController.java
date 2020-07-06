@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.employees.crud.dto.Employee;
 import com.employees.crud.service.EmployeeServiceImpl;
 
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class EmployeeController {

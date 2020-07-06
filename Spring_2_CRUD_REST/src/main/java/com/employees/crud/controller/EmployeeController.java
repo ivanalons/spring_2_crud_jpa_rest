@@ -16,10 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.employees.crud.dto.Employee;
 import com.employees.crud.service.EmployeeServiceImpl;
 
+// Controlador del serveis HTTP REST
+
 @RestController
 @RequestMapping("/api")
 public class EmployeeController {
 	
+	//Injecció de dependència del Service EmployeeServiceImpl
 	@Autowired
 	EmployeeServiceImpl employeeServiceImpl;
 	
@@ -29,9 +32,9 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/employees")
-	public Employee saveEmployee(@RequestBody Employee employee) {
+	public Employee createEmployee(@RequestBody Employee employee) {
 		
-		return employeeServiceImpl.saveEmployee(employee);
+		return employeeServiceImpl.createEmployee(employee);
 	}
 	
 	@GetMapping("/employees/{id}")

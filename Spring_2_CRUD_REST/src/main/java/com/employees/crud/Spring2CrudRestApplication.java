@@ -13,6 +13,10 @@ public class Spring2CrudRestApplication {
 		SpringApplication.run(Spring2CrudRestApplication.class, args);
 	}
 
+	// Solucio problema CORS:
+	// Permisos totals d'accés al RestController perque el frontal es un projecte web 
+	// estatic local i la web home.html es un fitxer local. No cal executar-lo des 
+	// d'un servidor Apache
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {

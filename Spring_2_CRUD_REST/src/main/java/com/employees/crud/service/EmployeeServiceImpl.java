@@ -10,16 +10,12 @@ import com.employees.crud.dto.Employee;
 
 @Service
 public class EmployeeServiceImpl implements IEmployeeService{
-
-	//	private static final String EMPLOYEE = "EMPLOYEE";
-	//	private static final String MANAGER = "MANAGER";
-	//	private static final String BOSS = "BOSS";
-	//	private static final String VOLUNTEER = "VOLUNTEER";
 	
 	public enum JobEnum { //Ha de coincidir amb la enumeració del camp job de la taula employees de  la base de dades
 		EMPLOYEE,MANAGER,BOSS,VOLUNTEER
 	}
 	
+	//Injecció de dependència del respositori JPA IEmployeeDAO
 	@Autowired
 	IEmployeeDAO iEmployeeDAO;
 	
@@ -38,8 +34,9 @@ public class EmployeeServiceImpl implements IEmployeeService{
 
 	}
 	
+	//Al crear un empleat, en funcio de la feina de l'empleat se li assigna un salari concret
 	@Override
-	public Employee saveEmployee(Employee employee) {
+	public Employee createEmployee(Employee employee) {
 		
 		String strJob = employee.getJob().toUpperCase();
 		

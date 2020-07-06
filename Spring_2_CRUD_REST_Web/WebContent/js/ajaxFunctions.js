@@ -1,4 +1,7 @@
 
+	// Operacio READ
+	// Envia una peticio de tipus GET al REST Controller del BackEnd
+	// Retorna un objecte JSON que conte el llistat amb tots els empleats
 	function sendGETRequest(){
 		
 		var answerGet ="";
@@ -25,6 +28,9 @@
 			
 	}
 	
+	// Operacio READ per "id"
+	// Envia una peticio de tipus GET al REST Controller del BackEnd, indicant a la URL l'identificador de l'empleat que es vol consultar
+	// Retorna un objecte JSON que conte l'empleat amb l'id passat per la URL
 	function sendGETRequestById(){
 		
 		var answerGetById ="";
@@ -50,6 +56,9 @@
 			
 	}
 	
+	// Operacio READ per "job"
+	// Envia una peticio de tipus GET al REST Controller del BackEnd, indicant a la URL la feina dels empleats que es vol consultar
+	// Retorna un objecte JSON que conte els empleats amb la feina "job" passada per la URL
 	function sendGETRequestByJob(){
 		
 		var answerGetByJob ="";
@@ -75,6 +84,10 @@
 			
 	}
 	
+	// Operacio CREATE
+	// Envia una peticio de tipus POST al REST Controller del BackEnd, indicant al cos de la peticio HTTP un objecte JSON amb les dades 
+	// com es vol creat el nou empleat (name i job)
+	// Retorna un objecte JSON que conte el nou empleat amb totes les seves dades
 	function sendPOSTRequest(){
 		
 		var answerPost ="";
@@ -106,6 +119,10 @@
 			
 	}
 	
+	// Operacio UPDATE
+	// Envia una peticio de tipus PUT al REST Controller del BackEnd, indicant al cos de la peticio HTTP un objecte JSON amb les dades 
+	// com es vol modificar l'empleat. En concret es modificarà l'empleat amb identificador l'id passat per la URL
+	// Retorna un objecte JSON que conte l'empleat modificat amb totes les seves noves dades
 	function sendPUTRequest(){
 		
 		var answerPut ="";
@@ -139,6 +156,10 @@
 			
 	}
 	
+	// Operacio DELETE
+	// Envia una peticio de tipus DELETE al REST Controller del BackEnd, indicant a la URL de la peticio HTTP l'identificador "id"
+	// corresponent a l'empleat que es vol eliminar
+	// No retorna cap objecte JSON.
 	function sendDELETERequest(){
 		
 		var answerGetById ="";
@@ -163,6 +184,7 @@
 			
 	}
 	
+	// Retorna el codi HTML per visualitzar un array d'empleats passat per parametre, en una TABLE
 	function employeeArrayToTable(employeesArray){
 		var output = "<table border=1 >";
 		
@@ -177,6 +199,7 @@
 		return output;
 	}
 	
+	// Retorna el codi HTML per visualitzar un objecte empleat passat per parametre, en concret una fila TR (d'una taula TABLE)
 	function employeeToRow(employee){
 		
 		var output="<tr>";
@@ -192,6 +215,7 @@
 		
 	}
 	
+	// Retorna el codi HTML per visualitzar un objecte empleat passat per parametre, en una TABLE
 	function employeeToTable(employee){
 		var output = "<table border=1 >";
 		

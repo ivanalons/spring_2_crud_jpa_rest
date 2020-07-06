@@ -8,10 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="employees")
+@Table(name="employees") //Mapejar mitjançant JPA, la taula EMPLOYEES amb la classe Employee
 public class Employee  {
  
-	//Atributos de entidad cliente
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
